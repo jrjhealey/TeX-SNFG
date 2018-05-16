@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% This tex file defines the shapes necessary for inclusion as tex macros. %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This tex file defines the shapes necessary for inclusion as tex macros.
+% Simply copy and paste this code in to your preamble and call the commands
+% wherever you wish to display a glycan symbol.
+%
+% Alternatively, download this .tex file somewhere, and use \input{/path/to/snfg.tex}
+% You'll need to load the Tikz package in your preamble yourself if you do this.
+
+\usepackage{tikz} 
+\usetikzlibrary{decorations,
+                angles,
+                quotes,
+                calc,
+                positioning,
+                shapes,
+                arrows}
+
+
+% Author: Joe R. J. Healey
+% Version: 1.0
+% Email: J.R.J.Healey@warwick.ac.uk
+
+% Changelog:
+%  2018-05-16
+%    > Initial creation and definition of some initial macros.
+%     - Colours (RGB matches to NCBI documentation)
+%     - Hexoses and N-acetyl hexoses
+
+
+% Symbol Nomenclature for Glycans
+
+% Colors (capitalised first letter to distinguish from inbuilt "green" etc.
+\definecolor{Blue}{RGB}{0, 134, 248}
+\definecolor{Green}{RGB}{0, 166, 91}
+\definecolor{Yellow}{RGB}{255, 213, 65}
+\definecolor{Orange}{RGB}{255, 118, 50}
+\definecolor{Pink}{RGB}{255, 136, 192}
+\definecolor{Purple}{RGB}{158, 58, 247}
+\definecolor{LightBlue}{RGB}{129, 205, 230}
+\definecolor{DarkBrown}{RGB}{148, 98, 41}
+
+% Hexoses
+\newcommand{\Hexose}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=white](){};}}}
+\newcommand{\Glc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Blue](){};}}}
+\newcommand{\Man}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Green](){};}}}
+\newcommand{\Gal}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Yellow](){};}}}
+\newcommand{\Gul}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Orange](){};}}}
+\newcommand{\Alt}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Pink](){};}}}
+\newcommand{\All}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Purple](){};}}}
+\newcommand{\Tal}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=LightBlue](){};}}}
+\newcommand{\Ido}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=DarkBrown](){};}}}
+
+% N-Acetyl Hexoses
+\newcommand{\HexNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=white](){};}}}
+\newcommand{\GlcNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Blue](){};}}}
+\newcommand{\ManNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Green](){};}}}
+\newcommand{\GalNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Yellow](){};}}}
+\newcommand{\GulNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Orange](){};}}}
+\newcommand{\AltNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Pink](){};}}}
+\newcommand{\AllNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Purple](){};}}}
+\newcommand{\TalNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=LightBlue](){};}}}
+\newcommand{\IdoNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=DarkBrown](){};}}}
