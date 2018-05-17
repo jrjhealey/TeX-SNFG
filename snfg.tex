@@ -3,6 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Requires PGF >= v 1.18.
+% %return statements assist in generation of the test files (regex-able delimiter)
 
 % This tex file defines the shapes necessary for inclusion as tex macros.
 % Simply copy and paste this code in to your preamble and call the commands
@@ -26,6 +27,7 @@
 %    > Replace hard coded values with variables and defaults.
 %    > If the above is done, define a single macro for each glycan class (e.g. pentose)
 %      and then make sub-macros of it for each individual sugar (e.g. \Ara{#1,#2,#3}
+%    > Standardise heights and widths (switch from use of scale)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,7 +95,16 @@
 
 % DeoxyhexNAc
 
+
 % Di-deoxyhexose
+\newcommand{\Dideoxyhexose}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=white](){};}}}
+\newcommand{\Oli}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=Blue](){};}}}
+\newcommand{\Tyv}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=Green](){};}}}
+\newcommand{\Abe}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=Orange](){};}}}
+\newcommand{\Par}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=Pink](){};}}}
+\newcommand{\Dig}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=Purple](){};}}}
+\newcommand{\Col}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.6cm, rectangle, fill=LightBlue](){};}}}
+%return
 
 % Pentose
 \newcommand{\Pentose}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=white](){};}}}
@@ -113,8 +124,24 @@
 %return
 
 % Di-Deoxynonulosonate
+\newcommand{\Dideoxynonulosonate}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.15cm, minimum width=0.9cm, diamond, aspect=2, fill=white](){};}}}
+\newcommand{\Pse}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.9cm, diamond, aspect=2, fill=Green](){};}}}
+\newcommand{\Leg}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.9cm, diamond, aspect=2, fill=Yellow](){};}}}
+\newcommand{\Aci}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.9cm, diamond, aspect=2, fill=Pink](){};}}}
+\newcommand{\eLeg}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.2cm, minimum width=0.9cm, diamond, aspect=2, fill=LightBlue](){};}}}
+%return
 
 % Unknown
+\newcommand{\Unknown}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=white](){};}}}
+\newcommand{\Bac}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Blue](){};}}}
+\newcommand{\LDmanHep}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Green](){};}}}
+\newcommand{\Kdo}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Yellow](){};}}}
+\newcommand{\Dha}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Orange](){};}}}
+\newcommand{\DDmanHep}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Pink](){};}}}
+\newcommand{\MurNAc}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=Purple](){};}}}
+\newcommand{\MurNGc}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=LightBlue](){};}}}
+\newcommand{\Mur}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, minimum height=0.1cm, minimum width=0.7cm, chamfered rectangle, fill=DarkBrown](){};}}}
+%\return
 
 % Assigned
 \newcommand{\Assigned}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=white](){};}}}
@@ -122,6 +149,7 @@
 \newcommand{\Fru}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Green](){};}}}
 \newcommand{\Tag}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Yellow](){};}}}
 \newcommand{\Sor}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Orange](){};}}}
+% Note Psic = Psi, but Psi is a reserved tex command.
 \newcommand{\Psic}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Pink](){};}}}
 %return
 
