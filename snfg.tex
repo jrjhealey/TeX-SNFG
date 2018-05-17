@@ -2,6 +2,8 @@
 %%% This tex file defines the shapes necessary for inclusion as tex macros. %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Requires PGF >= v 1.18.
+
 % This tex file defines the shapes necessary for inclusion as tex macros.
 % Simply copy and paste this code in to your preamble and call the commands
 % wherever you wish to display a glycan symbol.
@@ -18,6 +20,14 @@
 %    > Initial creation and definition of some initial macros.
 %     - Colours (RGB matches to NCBI documentation)
 %     - Hexoses and N-acetyl hexoses
+
+% To Do:
+%  2018-05-16
+%    > Replace hard coded values with variables and defaults.
+%    > If the above is done, define a single macro for each glycan class (e.g. pentose)
+%      and then make sub-macros of it for each individual sugar (e.g. \Ara{#1,#2,#3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{tikz} 
 \usetikzlibrary{angles,
@@ -39,6 +49,7 @@
 \definecolor{Purple}{RGB}{158, 58, 247}
 \definecolor{LightBlue}{RGB}{129, 205, 230}
 \definecolor{DarkBrown}{RGB}{148, 98, 41}
+\definecolor{Red}{RGB}{255, 0, 24}
 
 % Hexoses  (To do: replace some of the hard-coded values with vars and defaults.)
 \newcommand{\Hexose}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=white](){};}}}
@@ -50,6 +61,7 @@
 \newcommand{\All}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=Purple](){};}}}
 \newcommand{\Tal}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=LightBlue](){};}}}
 \newcommand{\Ido}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, circle, fill=DarkBrown](){};}}}
+%return
 
 % N-Acetyl Hexoses
 \newcommand{\HexNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=white](){};}}}
@@ -61,5 +73,55 @@
 \newcommand{\AllNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=Purple](){};}}}
 \newcommand{\TalNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=LightBlue](){};}}}
 \newcommand{\IdoNAc}{\raisebox{0.5pt}{\tikz{\node[draw,line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=4, fill=DarkBrown](){};}}}
+%return
 
+% Hexosamine
+% Half filled shapes are complicated, this will appear in a later update.
+
+% Heuronate
+% Half filled shapes are complicated, this will appear in a later update.
+
+% Deoxyhexose (Note, numbers are not allowed in TeX macro command names, thus 6dTal becomes dTal)
+\newcommand{\Deoxyhexose}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=white](){};}}}
+\newcommand{\Qui}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=Blue](){};}}}
+\newcommand{\Rha}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=Green](){};}}}
+\newcommand{\dGul}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=Orange](){};}}}
+\newcommand{\dAlt}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=Pink](){};}}}
+\newcommand{\dTal}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=LightBlue](){};}}}
+\newcommand{\Fuc}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=3,fill=Red](){};}}}
+%return
+
+% DeoxyhexNAc
+
+% Di-deoxyhexose
+
+% Pentose
+\newcommand{\Pentose}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=white](){};}}}
+\newcommand{\Ara}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=Green](){};}}}
+\newcommand{\Lyx}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=Yellow](){};}}}
+\newcommand{\Xyl}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=Orange](){};}}}
+\newcommand{\Rib}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=0.9, star, star points=5, star point ratio=2, fill=Pink](){};}}}
+%return
+
+% Deoxynonulosonate
+\newcommand{\Deoxynonulosonate}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=white](){};}}}
+\newcommand{\Kdn}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=Green](){};}}}
+\newcommand{\NeuAc}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=Purple](){};}}}
+\newcommand{\NeuGc}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=LightBlue](){};}}}
+\newcommand{\Neu}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=DarkBrown](){};}}}
+\newcommand{\Sia}{\raisebox{0pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, diamond, fill=Red](){};}}}
+%return
+
+% Di-Deoxynonulosonate
+
+% Unknown
+
+% Assigned
+\newcommand{\Assigned}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=white](){};}}}
+\newcommand{\Api}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Blue](){};}}}
+\newcommand{\Fru}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Green](){};}}}
+\newcommand{\Tag}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Yellow](){};}}}
+\newcommand{\Sor}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Orange](){};}}}
+\newcommand{\Psic}{\raisebox{0.5pt}{\tikz{\node[draw, line width=0.3mm, scale=1.1, regular polygon, regular polygon sides=5,fill=Pink](){};}}}
+%return
 

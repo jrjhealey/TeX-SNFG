@@ -22,7 +22,7 @@ Alternatively, download the TeX file somewhere sensible and use:
     <document content>
     \end{document}
     
-    
+*The shapes used here require PGF >= v 1.18, and that the `shape` package is loaded.
     
 # To Do
  - Still a number of Macros to add for some of the more complicated shapes.
